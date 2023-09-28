@@ -1,0 +1,14 @@
+def min_miles_to_walk(n, calorie):
+    calorie.sort(reverse=True)  # Sort the burgers by calorie counts in descending order
+    miles = 0
+    for i in range(n):
+        miles += (n ** i) * calorie[i]
+    return miles
+
+# Input
+n = int(input())
+calorie = list(map(int, input().split()))
+
+# Calculate and print the minimum number of miles Hardik must walk
+result = min_miles_to_walk(n, calorie)
+print(result)

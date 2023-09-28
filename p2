@@ -1,0 +1,22 @@
+def min_inequality(n, arr, k):
+    arr.sort()
+    
+    # Initialize the minimum inequality as a large value
+    min_ineq = float('inf')
+    
+    # Slide a window of size k through the sorted array
+    for i in range(n - k + 1):
+        current_ineq = arr[i + k - 1] - arr[i]
+        if current_ineq < min_ineq:
+            min_ineq = current_ineq
+    
+    return min_ineq
+
+# Input
+n = int(input())
+arr = [int(input()) for _ in range(n)]
+k = int(input())
+
+# Calculate and print the minimum possible value of the inequality
+result = min_inequality(n, arr, k)
+print(result)
